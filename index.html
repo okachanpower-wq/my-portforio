@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web制作 & 運営サポート | あなたの街のWeb担当者</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts から洗練されたフォントを読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="LOCO SYNC" class="logo-img">
+                <span class="logo-text">LOCO SYNC</span>
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#features">特徴</a></li>
+                    <li><a href="#services">サービス</a></li>
+                    <li><a href="#pricing">料金プラン</a></li>
+                    <li><a href="#news">お知らせ</a></li>
+                    <li><a href="#contact" class="btn-nav">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <!-- スマホ用ハンバーガーボタン -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. メインビュー -->
+    <section class="hero">
+        <div class="hero-container">
+            <span class="hero-sub">千葉県野田市を拠点に、作って終わりにしない、伴走型Web制作</span>
+            <h1 class="hero-title">Webのチカラで、<br>お店の価値を未来へ繋ぐ。</h1>
+            <p class="hero-text">
+                私たちは、最高品質のホームページ制作だけでなく、毎月の面倒な維持管理・集客サポートまで「丸ごと身代わり対応」するパートナーです。
+            </p>
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn btn-primary">料金プランを見る</a>
+                <a href="#contact" class="btn btn-secondary">無料相談してみる</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 私たちの強み -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">私たちの強み</h2>
+            <p class="section-subtitle">選ばれる3つの理由</p>
+            
+            <div class="grid-3">
+                <div class="card feature-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>高品質＆スピーディ制作</h3>
+                    <p>無駄なコストを徹底的にカット。完全オリジナルでモダンなデザインを、どこよりもスピーディにお届けします。</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>面倒な維持管理を「丸ごと身代わり」</h3>
+                    <p>サーバー管理、セキュリティ対策、文字の修正や写真の差し替えなど、専門知識が必要な運用のすべてをあなたに代わって対応。本業に100%集中していただけます。</p>
+                </div>
+                <div class="card feature-card">
+                    <div class="card-icon">📈</div>
+                    <h3>毎月の集客アドバイザー業務</h3>
+                    <p>ただサイトを置いておくだけではありません。毎月のアクセス状況をプロの視点で分析し、次にどんな手を打てばいいか、分かりやすいレポートと共にご提案します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 提供サービス・料金プラン -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">提供サービス</h2>
+            <p class="section-subtitle">ホームページに関わる全てをお任せ</p>
+            <div class="services-list">
+                <div class="service-item">・オリジナルホームページ制作（レスポンシブ・スマホ対応）</div>
+                <div class="service-item">・ドメイン取得代行・安全なサーバー構築</div>
+                <div class="service-item">・文字、写真の毎月アップデート代行</div>
+                <div class="service-item">・月次アクセス解析・改善アドバイス</div>
+                <div class="service-item">・MEO対策・その他</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+        <div class="pricing-header" style="text-align: center; margin-bottom: 40px;">
+            <h2 style="font-size: 28px; font-weight: bold; color: #1a2a3a; margin-bottom: 10px;">料金プラン</h2>
+            <p style="font-size: 14px; color: #666;">分かりやすい初期費用 ＋ サブスクモデル</p>
+        </div>
+
+        <div class="pricing-container">
+            <div class="price-card">
+                <span class="card-badge badge-initial">INITIAL</span>
+                <h3 class="card-title">初期制作費</h3>
+                <div class="card-price">¥150,000 <span class="tax">(税込)</span></div>
+                <p class="card-desc">※5ページ構成（トップ、サービス、About、お知らせ、お問い合わせ）の標準的なコーポレートサイトの制作費用です。</p>
+                <ul class="feature-list">
+                    <li>オリジナルデザイン設計</li>
+                    <li>スマートフォン最適化</li>
+                    <li>お問い合わせフォーム設置</li>
+                    <li>内部SEO対策（検索対策）</li>
+                </ul>
+                <a href="#contact" class="btn-plan btn-popular" data-plan="initial">このプランで相談する</a>
+            </div>
+
+            <div class="price-card">
+                <span class="card-badge badge-light">LIGHT</span>
+                <h3 class="card-title">エントリー保守</h3>
+                <div class="card-price">¥12,000 <span class="period">/月 (税込)</span></div>
+                <p class="card-desc">コストを抑えてホームページの維持管理とお知らせ更新だけをプロに任せたい企業向け。</p>
+                <ul class="feature-list">
+                    <li>サーバー・セキュリティの維持管理</li>
+                    <li>お知らせ・実績の更新代行</li>
+                    <li>メール・チャットでのいつでも相談窓口</li>
+                </ul>
+                <a href="#contact" class="btn-plan btn-popular" data-plan="light">このプランで相談する</a>
+            </div>
+
+            <div class="price-card card-popular">
+                <span class="card-badge badge-popular">POPULAR</span>
+                <h3 class="card-title">安心保守管理サブスク</h3>
+                <div class="card-price">¥25,000 <span class="period">/月 (税込)</span></div>
+                <p class="card-desc">あなたの会社の「専属Web担当者」として、日々の運用やトラブル対応をすべて身代わりで行います。</p>
+                <ul class="feature-list">
+                    <li>サーバー・セキュリティの維持管理</li>
+                    <li>月3回までの文章・画像修正代行（チャット対応）</li>
+                    <li>お知らせ・実績の更新代行</li>
+                    <li><strong>月次アクセス解析レポートの提出</strong></li>
+                    <li>メール・チャットでのいつでも相談窓口</li>
+                </ul>
+                <a href="#contact" class="btn-plan btn-popular" data-plan="popular">このプランで相談する</a>
+            </div>
+
+            <div class="price-card">
+                <span class="card-badge badge-premium">PREMIUM</span>
+                <h3 class="card-title">戦略的運用サポート</h3>
+                <div class="card-price">¥48,000 <span class="period">/月 (税込)</span></div>
+                <p class="card-desc">アクセス解析を次の集客アクションに繋げ、サイトの成果を最大化させたい企業向け。</p>
+                <ul class="feature-list">
+                    <li>サーバー・セキュリティの維持管理</li>
+                    <li><strong>文章・画像修正代行（優先対応・月8回）</strong></li>
+                    <li>お知らせ・実績の更新代行</li>
+                    <li><strong>解析レポート＋改善の考察・提案つき</strong></li>
+                    <li><strong>定期オンラインMTG・個別相談（月1回）</strong></li>
+                </ul>
+                <a href="#contact" class="btn-plan btn-popular" data-plan="premium">このプランで相談する</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. お知らせ -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. お知らせ -->
+    <section id="news" class="news">
+        <div class="container">
+            <h2 class="section-title">お知らせ</h2>
+            <p class="section-subtitle">制作実績・最新情報</p>
+            
+            <div class="news-list">
+                <article class="news-item">
+                    <span class="news-date">2026.05.28</span>
+                    <span class="news-category">制作実績</span>
+                    <a href="#" class="news-title">野田市「LOCO SYNC」のホームページを公開いたしました。</a>
+                </article>
+                <article class="news-item">
+                    <span class="news-date">2026.05.15</span>
+                    <span class="news-category">サポート</span>
+                    <a href="#" class="news-title">【月額保守】ご契約中のお客様へアクセス解析レポートを順次送付しております。</a>
+                </article>
+                <article class="news-item">
+                    <span class="news-date">2026.06.01</span>
+                    <span class="news-category">お知らせ</span>
+                    <a href="#" class="news-title">Web制作事業「LOCO SYNC」の公式サイトをオープンしました。</a>
+                </article>
+            </div>
+            <div class="news-footer">
+                <p class="news-note">日々の活動、最新情報</p>
+                <a href="#" class="btn-nav">もっと見る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. お問い合わせ -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">無料相談・お問い合わせ</h2>
+            <p class="section-subtitle">ホームページに関することなら、何でもお気軽にご相談ください</p>
+            
+            <form class="contact-form" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="name">お名前 / 会社名 <span class="required">必須</span></label>
+                    <input type="text" id="name" placeholder="例：山田 太郎 / 株式会社〇〇" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス <span class="required">必須</span></label>
+                    <input type="email" id="email" placeholder="例：example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="plan">ご検討中のプラン</label>
+                    <select id="plan">
+                        <option value="none">選択してください</option>
+                        <option value="initial">初期制作費（¥150,000）</option>
+                        <option value="light">エントリー保守（¥12,000/月）</option>
+                        <option value="popular">安心保守管理サブスク（¥25,000/月）</option>
+                        <option value="premium">戦略的運用サポート（¥48,000/月）</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">ご相談内容 <span class="required">必須</span></label>
+                    <textarea id="message" rows="6" placeholder="新しくホームページを作りたい、今のサイトの管理を引き継いでほしい、など自由にご記入ください。" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">この内容で送信する</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer-copy">
+        <p>&copy; 2026 LOCOSYNC. All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

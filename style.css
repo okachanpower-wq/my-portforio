@@ -1,0 +1,647 @@
+/* --- 全体のリセットと共通設定 --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #334155;
+    background-color: #f8fafc;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1-fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* --- 見出しスタリング --- */
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    color: #0f172a; /* 濃いネイビー */
+    font-weight: 700;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #d4af37; /* ゴールド */
+    font-weight: 500;
+    margin-bottom: 40px;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+}
+
+/* --- ボタン --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #d4af37;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.btn-primary:hover {
+    background-color: #f1c40f;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #0f172a;
+    transform: translateY(-2px);
+}
+
+.btn-full {
+    display: block;
+    width: 100%;
+}
+
+/* --- カード共通 --- */
+.card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- 1. ヘッダー --- */
+.header {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    color: #0f172a;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.logo:hover .logo-text {
+    color: #d4af37;
+}
+
+.nav-menu ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-menu ul li a {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.nav-menu ul li a:hover {
+    color: #d4af37;
+}
+
+.btn-nav {
+    background-color: #d4af37;
+    border: 1px solid #0f172a;
+    padding: 6px 16px;
+    border-radius: 4px;
+    color: #0f172a !important;
+}
+
+.btn-nav:hover {
+    background-color: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37 !important;
+}
+
+/* スマホ用ハンバーガー */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* --- 2. メインビュー (Hero) --- */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(15, 23, 42, 0.45);
+    /* 1. メイン画像を差し替え（同ディレクトリに配置してください） */
+    background-image: url("baumannfoto-hands-10016269.jpg");
+
+    /* 2. 画面幅に綺麗に収める */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+
+    /* 3. 縦サイズを固定して中央寄せにする（デザイン崩れを防ぐ） */
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.22), rgba(15, 23, 42, 0.55));
+    pointer-events: none;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-sub {
+    color: #d4af37;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* --- 3. 私たちの強み --- */
+.features {
+    padding: 100px 0;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    color: #0f172a;
+    margin: 20px 0 10px 0;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+}
+
+/* --- 4. 提供サービス & 料金プラン --- */
+.services {
+    padding: 60px 0;
+    background-color: #f1f5f9;
+}
+
+.services-list {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid #d4af37;
+}
+
+.service-item {
+    font-size: 1.05rem;
+    padding: 8px 0;
+    color: #334155;
+    font-weight: 500;
+}
+
+.pricing-section {
+  padding: 60px 20px;
+  background-color: #fcfcfc;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.price-card {
+  flex: 1;
+  min-width: 260px;
+  max-width: 285px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 30px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.price-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+.price-card.card-popular {
+  border: 2px solid #dcb35c;
+  background-color: #fffdf9;
+}
+.card-badge {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+.badge-initial { background-color: #1a2a3a; color: #fff; }
+.badge-light { background-color: #e9ecef; color: #495057; }
+.badge-popular { background-color: #dcb35c; color: #fff; }
+.badge-premium { background-color: #111111; color: #fff; }
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a2a3a;
+  margin: 15px 0 10px 0;
+}
+.card-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1a2a3a;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+.card-price .tax, .card-price .period {
+  font-size: 12px;
+  font-weight: normal;
+  color: #666;
+}
+.card-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  flex-grow: 1;
+}
+.feature-list li {
+  font-size: 13px;
+  color: #333;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #dcb35c;
+  font-weight: bold;
+}
+.feature-list li.not-included {
+  color: #b0b0b0;
+}
+.feature-list li.not-included::before {
+  content: "✕";
+  color: #ccc;
+}
+/* すべてのボタンをPOPULARの色（オレンジ・ゴールド）に統一 */
+.btn-plan {
+  display: block;
+  text-align: center;
+  background-color: #dcb35c;
+  color: #fff;
+  border: 1px solid #dcb35c;
+  padding: 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+/* すべてのボタンのホバー時の挙動を統一 */
+.btn-plan:hover {
+  background-color: #c9a14b;
+  border-color: #c9a14b;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .pricing-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .price-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* --- 5. お知らせ --- */
+.news {
+    padding: 100px 0;
+    background-color: #f1f5f9;
+}
+
+.news-list {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-date {
+    font-size: 0.9rem;
+    color: #64748b;
+    width: 120px;
+}
+
+.news-category {
+    font-size: 0.75rem;
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 2px 10px;
+    border-radius: 4px;
+    margin-right: 20px;
+    font-weight: 500;
+}
+
+.news-title {
+    color: #334155;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.news-title:hover {
+    color: #d4af37;
+    padding-left: 5px;
+}
+
+.news-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.news-note {
+    font-size: 0.95rem;
+    color: #64748b;
+    letter-spacing: 0.05em;
+}
+
+/* --- 6. お問い合わせ --- */
+.contact {
+    padding: 100px 0;
+}
+
+.contact-form {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.required {
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 0.7rem;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #334155;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+/* --- フッター --- */
+.footer-copy {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* --- 📱 レスポンシブ対応 (スマホ用) --- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 4px;
+    }
+    
+    .pricing-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .recommended {
+        transform: none;
+    }
+    
+    .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 20px;
+    }
+    
+    /* ハンバーガーメニュー有効化 */
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0f172a;
+        padding: 20px;
+        border-bottom: 2px solid #d4af37;
+    }
+    
+    .nav-menu.active {
+        display: block;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .btn-nav {
+        display: block;
+        width: 100%;
+    }
+    
+    /* ハンバーガーアニメーション用 */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

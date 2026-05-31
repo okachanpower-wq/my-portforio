@@ -201,28 +201,29 @@
             <h2 class="section-title">無料相談・お問い合わせ</h2>
             <p class="section-subtitle">ホームページに関することなら、何でもお気軽にご相談ください</p>
             
-            <form class="contact-form" onsubmit="return false;">
-                <div class="form-group">
-                    <label for="name">お名前 / 会社名 <span class="required">必須</span></label>
-                    <input type="text" id="name" placeholder="例：山田 太郎 / 株式会社〇〇" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">メールアドレス <span class="required">必須</span></label>
-                    <input type="email" id="email" placeholder="例：example@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="plan">ご検討中のプラン</label>
-                    <select id="plan">
-                        <option value="none">選択してください</option>
-                        <option value="initial">初期制作費（¥150,000）</option>
-                        <option value="light">エントリー保守（¥12,000/月）</option>
-                        <option value="popular">安心保守管理サブスク（¥25,000/月）</option>
-                        <option value="premium">戦略的運用サポート（¥48,000/月）</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">ご相談内容 <span class="required">必須</span></label>
-                    <textarea id="message" rows="6" placeholder="新しくホームページを作りたい、今のサイトの管理を引き継いでほしい、など自由にご記入ください。" required></textarea>
+            <form class="contact-form" action="https://formspree.io/f/mzdwqpgp" method="POST">
+          <input type="hidden" name="_next" value="https://my-portfolio-onig.vercel.app/thankyou.html">
+          <div class="form-group">
+            <label for="name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="name" name="name" placeholder="例: 山田 太郎" required>
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="email" name="email" placeholder="例: example@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="plan">ご検討中のプラン</label>
+            <select id="plan" name="plan">
+              <option value="none">選択してください</option>
+              <option value="initial">初期制作費（¥150,000）</option>
+              <option value="light">エントリー保守（¥12,000/月）</option>
+              <option value="popular">安心保守管理サブスク（¥25,000/月）</option>
+              <option value="premium">戦略的運用サポート（¥48,000/月）</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">ご相談内容 <span class="required">必須</span></label>
+            <textarea id="message" name="message" rows="6" placeholder="新しくホームページを作りたい、今のサイトをリニューアルしたいなど" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-full">この内容で送信する</button>
             </form>
